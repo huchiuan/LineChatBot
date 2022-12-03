@@ -7,6 +7,9 @@ import os
 
 app = Flask(__name__)
 
+
+
+
 # Channel Access Token
 line_bot_api = LineBotApi(os.getenv("Channel_Access_Token"))
 # Channel Secret
@@ -138,8 +141,8 @@ def handle_message(event):
     else:
         userID = event.source.user_id
 
-        g_profile = line_bot_api.get_group_summary(groupID)
-        groupName = g_profile.group_name
+        # g_profile = line_bot_api.get_group_summary(groupID)
+        # groupName = g_profile.group_name
 
         u_profile = line_bot_api.get_group_member_profile(groupID,userID)
         userName = u_profile.display_name
